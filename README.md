@@ -9,7 +9,6 @@
 
 ## General info
 
-Emotion Diary
 Welcome to the Emotion Diary! This is a web app that allows you to track your daily emotions and reflect on how you're feeling. 
 It's built using React.js and is a great way to practice my React skills.
 
