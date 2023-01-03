@@ -13,12 +13,12 @@ const Edit = () => {
 
     useEffect(() => {
         const titleElement = document.getElementsByTagName("title")[0]
-        titleElement.innerHTML = `감정 일기장 - ${id}번 일기 수정`
+        titleElement.innerHTML = `Emotion diary - ${id}th diary`
     }, [])
     useEffect(() => {
-        if (diaryList.length > 1) {
+        if (diaryList.length >= 1) {
             const targetDiary = diaryList.find(
-                (it) => parseInt(it.id) === parseInt(id)
+                (it) => parseInt(it.id) == parseInt(id)
             );
 
             if (targetDiary) {
@@ -30,8 +30,7 @@ const Edit = () => {
     }, [id, diaryList])
     return (
         <div>{originData && <DiaryEditor isEdit={true} originData={originData} />}
-            <h2>Edit</h2>
-            <p>이곳은 일기 수정페이지 입니다.</p>
+            {!originData && <><h2>Edit</h2><p>Here is edit page.</p></>}
 
         </div>
     )

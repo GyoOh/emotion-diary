@@ -16,7 +16,7 @@ const Diary = () => {
 
     useEffect(() => {
         const titleElement = document.getElementsByTagName("title")[0]
-        titleElement.innerHTML = `감정 일기장 - ${id}번 일기`
+        titleElement.innerHTML = `Emotion Diary - ${id}th diary`
     }, [])
     useEffect(() => {
         if (diaryList.length >= 1) {
@@ -25,32 +25,32 @@ const Diary = () => {
             if (targetDiary) {
                 setData(targetDiary)
             } else {
-                alert("없는 일기입니다.")
+                alert("No diary.")
                 navigate('', { replace: true })
             }
         }
     }, [id, diaryList]);
 
     if (!data) {
-        return <div className="DiaryPage">로딩중입니다...</div>
+        return <div className="DiaryPage">Loading...</div>
     } else {
 
         const curEmotionData = emotionList.find((it) => parseInt(it.emotion_id) === parseInt(data.emotion))
         console.log(curEmotionData)
         return (
             <div className="DiaryPage">
-                <MyHeader headText={`${getStringDate(new Date(data.date))} 기록`}
+                <MyHeader headText={`${getStringDate(new Date(data.date))} Record`}
                     leftChild={
-                        <MyButton text={"뒤로가기"} onClick={() => navigate(-1)} />
+                        <MyButton text={"Back"} onClick={() => navigate(-1)} />
                     }
                     rightChild={
-                        <MyButton text={"수정하기"} onClick={() => navigate(`/edit/${data.id}`)}
+                        <MyButton text={"Edit"} onClick={() => navigate(`/edit/${data.id}`)}
                         />
                     }
                 />
                 <article>
                     <section>
-                        <h4>오늘의 감정</h4>
+                        <h4>Today's feeling</h4>
                         <div className={["diary_img_wrapper", `diary_img_wrapper_${data.emotion}`].join(" ")}>
                             <img src={curEmotionData.emotion_img} />
                             <div className="emotion_descript">
@@ -60,7 +60,7 @@ const Diary = () => {
 
                     </section>
                     <section>
-                        <h4>오늘의 일기</h4>
+                        <h4>Today's Feeling</h4>
                         <div className="diary_content_wrapper">
                             <p>{data.content}</p>
                         </div>
