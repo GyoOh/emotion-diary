@@ -11,11 +11,11 @@ const Home = () => {
 
     const [data, setData] = useState([])
     const [curDate, setCurDate] = useState(new Date())
-    const headText = `${curDate.getFullYear()}년 ${curDate.getMonth() + 1}월`
+    const headText = `${curDate.getMonth() + 1} / ${curDate.getFullYear()}`
 
     useEffect(() => {
         const titleElement = document.getElementsByTagName("title")[0]
-        titleElement.innerHTML = `감정 일기장`
+        titleElement.innerHTML = `Emotion diary`
     }, [])
 
     useEffect(() => {

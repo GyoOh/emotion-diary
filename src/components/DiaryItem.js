@@ -26,7 +26,7 @@ const DiaryItem = ({ id, emotion, content, date }) => {
             <div className="diary_content_preview">{content.slice(0, 25)}</div>
         </div>
         <div className="btn_wrapper">
-            <MyButton onClick={goEdit} text={"수정하기"} />
+            <MyButton onClick={goEdit} text={"Edit"} />
         </div>
     </div>
 }
