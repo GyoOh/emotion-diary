@@ -18,7 +18,8 @@ View a history of your past entries
 Edit or delete existing entries
 
 ## Technologies
-- react.js version: 18.2.0
+- React.js version: 18.2.0 
+- Firebase
 - HTML
 - CSS
 
